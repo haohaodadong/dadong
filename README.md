@@ -2,4 +2,4 @@
 
 Hi Humans!
 
-Dadong here,I like JavaScript Node.js and CoffeeaScript (that's what I'm made of!);
+Dadong here,I like JavaScript and Node.js;
