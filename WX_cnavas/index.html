@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="css/weui.min.css" />
+		<script src="js/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/index.css" />
+		<script>
+			(function (doc, win) {
+	            var docEl = doc.documentElement,
+	                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	                    recalc = function () {
+	                        var clientWidth = docEl.clientWidth;
+	                        if (!clientWidth) return;
+	                        docEl.style.fontSize = 16 * (clientWidth / 375) + 'px';
+	                    };
+	            if (!doc.addEventListener) return;
+	            win.addEventListener(resizeEvt, recalc, false);
+	            doc.addEventListener('DOMContentLoaded', recalc, false);
+	        })(document, window);
+        </script>
+		 
+	</head>
+	<body ontouchstart="">
+		
+		<div class="content">
+			<canvas id="canvas" class="canvas"></canvas>
+		</div>
+		<div class="weui-btn weui-btn_primary" id="firend" >笔迹回放</div>
+		<!--背景音乐-->
+		<div id="btn_mp3"></div>
+		<audio id="music" controls="controls" autoplay="autoplay" loop="loop" hidden>
+			<source src="music/chunjiexuqu.mp3"></source>
+		</audio>
+		
+	</body>
+	<script>
+		var width,height;
+		var canvas = document.getElementById("canvas");
+		canvas.width  = $(".content").width();
+		canvas.height = $(".content").width()*153/109;
+		width  = canvas.width;
+		height = canvas.height;
+		console.log(width,height);
+	</script>
+	<script>
+		function sleep(n) {
+			var start = new Date().getTime(); //定义起始时间的毫秒数
+			while(true) {
+				var time = new Date().getTime(); //每次执行循环取得一次当前时间的毫秒数
+				if(time - start > n) { //如果当前时间的毫秒数减去起始时间的毫秒数大于给定的毫秒数，即结束循环
+					break;
+				}
+			}
+		}
+
+	</script>
+	<script src="js/drawLine.js"></script>
+	<script src="js/mp3.js"></script>
+</html>
